@@ -1,15 +1,35 @@
-Welcome to your new dbt project!
+# Gaming Analytics DBT Model
 
-### Using the starter project
+This project implements a data pipeline and analytics model for a mobile gaming dataset using dbt Cloud and Google BigQuery.
+It demonstrates the core components of a modern analytics workflow: data ingestion, transformation, testing, and visualization.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Tech Stack
 
+**Warehouse**: BigQuery
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+**Transformation Tool**: dbt (Cloud)
+
+**Visualization**: Looker Studio
+
+## Pipeline Structure
+### **1)** Raw Data
+
+CSV files loaded into BigQuery under the dataset game_raw_data (in region europe-west1).
+
+### **2)** dbt Staging Models (models/staging/)
+
+Clean and standardize raw tables.
+
+### **3)** dbt Mart Models (models/marts/)
+
+Aggregate metrics into a fact table for visualization.
+
+### **4)** Testing (schema.yml)
+
+not_null and unique tests applied to key identifiers.
+
+### **5)** Visualization
+
+Modeled data is connected to Looker Studio for exploration and dashboarding.
+
+# [`Dasboard Link`](https://lookerstudio.google.com/reporting/fe776154-8364-41d4-a14e-59c40eaa7123)
