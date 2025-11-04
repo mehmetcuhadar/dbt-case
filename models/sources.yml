@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: game_raw_data
+    tables:
+      - name: user_daily_data

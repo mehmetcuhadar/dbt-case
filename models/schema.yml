@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_game_user_daily
+    description: "Cleaned user-level daily activity data."
+    columns:
+      - name: user_id
+        tests: [not_null]
+      - name: event_date
+        tests: [not_null]
+
+  - name: daily_metrics
+    description: "Aggregated business KPIs by event_date, country, and platform."
+    columns:
+      - name: event_date
+        tests: [not_null]
+      - name: country
+        tests: [not_null]
+      - name: platform
+        tests: [not_null]
+      - name: dau
+        tests: [not_null]
